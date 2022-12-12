@@ -10,7 +10,7 @@ namespace HubDeConsultaConsole
         {
             for (; ; )
             {
-                Console.Write("\n1- Continuar 2- Sair ");
+                Console.Write("\n1- Começar/Continuar 2- Sair ");
                 string opcao = Console.ReadLine();
                 if (opcao == "1")
                 {

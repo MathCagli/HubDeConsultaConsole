@@ -1,22 +1,23 @@
-﻿using HubDeConsultaConsole.Models.Base;
-
-namespace HubDeConsultaConsole.Models
+﻿namespace HubDeConsultaConsole.Models
 {
-    public class Cliente : EntidadeBase
+    public class Cliente
     {
+        public Int32 ID { get; set; }
         public String Nome { get; set; }
         public String CNPJ { get; set; }
-        public List<ContatoDoCliente> Contatos { get; private set; }
 
-        public Cliente(String Nome, String CNPJ)
+        public Cliente(Int32 ID, String Nome, String CNPJ)
         {
+            this.ID = ID;
             this.Nome = Nome;
             this.CNPJ = CNPJ;
         }
 
         public override string ToString()
         {
-            return "Nome: " + Nome + " CNPJ: " + CNPJ;
+            return "ID: " + ID +
+                   " Nome: " + Nome + 
+                   " CNPJ: " + CNPJ;
         }
     }
 }

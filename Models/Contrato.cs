@@ -1,20 +1,26 @@
-﻿using HubDeConsultaConsole.Models.Base;
-
-namespace HubDeConsultaConsole.Models
+﻿namespace HubDeConsultaConsole.Models
 {
-    public class Contrato: EntidadeBase
+    public class Contrato
     {
-        public Cliente Cliente { get; private set; }
+        public Int32 ID { get; set; }
         public DateTime DataInicioVigencia { get; private set; }
         public DateTime DataFimVigencia { get; private set; }
-        public List<TarifasDoContrato> Tarifas { get; private set; }
+        public Int32 ClienteID { get; set; }
 
-        public Contrato(Cliente Cliente, DateTime DataInicioVigencia, DateTime DataFimVigencia, List<TarifasDoContrato> Tarifas)
+        public Contrato(Int32 ID, DateTime DataInicioVigencia, DateTime DataFimVigencia, Int32 ClienteID)
         {
-            this.Cliente = Cliente;
+            this.ID = ID;
             this.DataInicioVigencia = DataInicioVigencia;
             this.DataFimVigencia = DataFimVigencia;
-            this.Tarifas = Tarifas;
+            this.ClienteID = ClienteID;
+        }
+
+        public override string ToString()
+        {
+            return "ID: " + ID +
+                   " Data do Início da Vigência: " + DataInicioVigencia +
+                   " Data do Fim da Vigência: " + DataFimVigencia +
+                   " ID do Cliente: " + ClienteID;
         }
     }
 }
